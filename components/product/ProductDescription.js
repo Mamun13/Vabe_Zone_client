@@ -69,7 +69,7 @@ const ProductDescription = ({inventory}) => {
 		<Fragment>
 			<Tabs id="controlled" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3 border-0">
 				<Tab eventKey="home" title="Description" className="pb-5 ps-0 border-0 font-lato">
-					<p className="font-16 font-lato border-top pt-2 border-warning text-justify">
+					<p className="font-16 font-lato border-top pt-2 border-warning text-justify text-light">
 						{inventory?.product?.product_short_desc}
 					</p>
 				</Tab>
@@ -142,7 +142,7 @@ const ProductDescription = ({inventory}) => {
 										</div>
 									</form>
 								) : (
-									<h3 className="mt-3">
+									<h3 className="mt-3 text-light">
 										You already posted your reviews,<br/> Thank you.
 									</h3>
 								)}

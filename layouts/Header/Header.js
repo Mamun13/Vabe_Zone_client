@@ -80,7 +80,6 @@ export default function Header() {
                 {reIsLoggedIn ? (
                   <Fragment>
                     
-
                     <li className="pe-3 login-modal">
                       <Link href="/my-account" className="text-light">
                         My Account

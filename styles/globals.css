@@ -1604,7 +1604,7 @@ product part css start
 }
 
 .counter .button-one:hover {
-  background: #ffa500 !important;
+  background: var(--primary) !important;
 }
 
 .counter .minus-icon {
@@ -1624,11 +1624,11 @@ product part css start
 }
 
 .counter .button-two:hover {
-  background: #ffa500 !important;
+  background: var(--primary) !important;
 }
 
 .buy-btn {
-  color: #333 !important;
+  color: #fff !important;
   transition: all linear 0.3s;
 }
 
@@ -1637,15 +1637,15 @@ product part css start
 }
 
 .buy-btn2 {
-  color: #333 !important;
-  border: 1px solid #f38120 !important;
+  color: #fff !important;
+  border: 1px solid var(--primary) !important;
   /* border-color: #ffa500!important; */
   transition: all linear 0.3s;
 }
 
 .buy-btn2:hover {
   color: #fff !important;
-  background: #f38120 !important;
+  background: var(--primary) !important;
 }
 
 .tabs .nav-link,
@@ -1672,7 +1672,7 @@ product part css start
 .tabs .nav-link,
 .nav-tabs .nav-link.active {
   color: white !important;
-  background: #f38120 !important;
+  background: var(--primary) !important;
   border-radius: 5px;
 }
 
@@ -1683,7 +1683,7 @@ product part css start
 .review-form .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #f38120 !important;
+  border-color: var(--primary) !important;
   outline: 0;
   box-shadow: none !important;
 }
@@ -1930,8 +1930,8 @@ tr {
 }
 
 .place_order_border {
-  border: 1px dashed #f38120;
-  background-color: #f38120 !important;
+  border: 1px dashed #fff;
+  background-color: var(--primary) !important;
   color: #fff !important;
 }
 
@@ -3031,13 +3031,13 @@ Responsive part end
   width: calc(100% - 100px - 10px);
 }
 .coupon_input input {
-  border: 1px dashed #f38120;
+  border: 1px dashed var(--primary);
   width: 100%;
   line-height: 22px;
   padding: 10px 14px;
 }
 .coupon_input input:focus {
-  border: 1px solid #f38120;
+  border: 1px solid #fff;
   outline: none;
 }
 .coupon_input button {
@@ -3052,8 +3052,8 @@ Responsive part end
   width: 100px;
   transform: translateX(100%);
   background-color: transparent;
-  border: 1px dashed #f38120;
-  color: #f38120;
+  border: 1px dashed #fff;
+  color: #fff;
   font-weight: bold;
 }
 .remove-coupon {

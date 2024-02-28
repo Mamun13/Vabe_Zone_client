@@ -962,7 +962,7 @@ const CheckoutPage = () => {
             <Col lg={7} md={12} sm={12} className=" mt-4">
               <div className="row">
                 <div className="col-8">
-                  <h1 className="text-uppercase font-24 fw-bold mb-3 billing_details">
+                  <h1 className="text-uppercase font-24 fw-bold mb-3 billing_details text-light">
                     BILLING DETAILS
                   </h1>
                 </div>
@@ -999,7 +999,7 @@ const CheckoutPage = () => {
               <Row>
                 <Col lg={12} md={12} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Full Name</Form.Label>
+                    <Form.Label className=" text-light">Full Name</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1017,7 +1017,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={6} md={6} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Address Line 1</Form.Label>
+                    <Form.Label className=" text-light">Address Line 1</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1035,7 +1035,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={6} md={6} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Address Line 2</Form.Label>
+                    <Form.Label className=" text-light">Address Line 2</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1053,7 +1053,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Division</Form.Label>
+                    <Form.Label className=" text-light">Division</Form.Label>
 
                     <Form.Select
                       className="rounded-0 form-deco form-control"
@@ -1081,7 +1081,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>District</Form.Label>
+                    <Form.Label className=" text-light">District</Form.Label>
                     <Form.Select
                       className="rounded-0 form-deco form-control"
                       aria-label="Default select example"
@@ -1107,7 +1107,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Upazila</Form.Label>
+                    <Form.Label className=" text-light">Upazila</Form.Label>
                     <Form.Select
                       className="rounded-0 form-deco form-control"
                       aria-label="Default select example"
@@ -1133,7 +1133,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Postcode</Form.Label>
+                    <Form.Label className=" text-light">Postcode</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1151,7 +1151,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label>Phone</Form.Label>
+                    <Form.Label className=" text-light">Phone</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder=""
@@ -1169,7 +1169,7 @@ const CheckoutPage = () => {
                 </Col>
                 <Col lg={4} md={4} className="">
                   <Form.Group className="mb-3" controlId="">
-                    <Form.Label className="font-lato">Email Address</Form.Label>
+                    <Form.Label className="font-lato text-light">Email Address</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder=""
@@ -1227,7 +1227,7 @@ const CheckoutPage = () => {
               <br />
               <div className="row">
                 <div className="col-8">
-                  <h1 className="text-uppercase font-24 fw-bold mb-3">
+                  <h1 className="text-uppercase font-24 fw-bold mb-3 text-light">
                     SHIPPING DETAILS
                   </h1>
                   <div className="col-lg-12 d-flex justify-content-start align-items-center mb-3">
@@ -1241,7 +1241,7 @@ const CheckoutPage = () => {
                         id="permanentSameAsPresent"
                       />
                     </div>
-                    <span>Same as billing address</span>
+                    <span className="text-light">Same as billing address</span>
                   </div>
                 </div>
                 {!isShippingSameAsBilling && (
@@ -1279,7 +1279,7 @@ const CheckoutPage = () => {
                 <Row>
                   <Col lg={12} md={12} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Full Name</Form.Label>
+                      <Form.Label className="text-light">Full Name</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
@@ -1297,7 +1297,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={6} md={6} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Address Line 1</Form.Label>
+                      <Form.Label className="text-light">Address Line 1</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
@@ -1315,7 +1315,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={6} md={6} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Address Line 2</Form.Label>
+                      <Form.Label className="text-light">Address Line 2</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
@@ -1391,7 +1391,7 @@ const CheckoutPage = () => {
 
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Division</Form.Label>
+                      <Form.Label className="text-light">Division</Form.Label>
 
                       <Form.Select
                         className="rounded-0 form-deco form-control"
@@ -1419,7 +1419,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>District</Form.Label>
+                      <Form.Label className="text-light">District</Form.Label>
                       <Form.Select
                         className="rounded-0 form-deco form-control"
                         aria-label="Default select example"
@@ -1445,7 +1445,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Upazila</Form.Label>
+                      <Form.Label className="text-light">Upazila</Form.Label>
                       <Form.Select
                         className="rounded-0 form-deco form-control"
                         aria-label="Default select example"
@@ -1472,7 +1472,7 @@ const CheckoutPage = () => {
 
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Postcode</Form.Label>
+                      <Form.Label className="text-light">Postcode</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
@@ -1490,7 +1490,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label>Phone</Form.Label>
+                      <Form.Label className="text-light">Phone</Form.Label>
                       <Form.Control
                         type="text"
                         placeholder=""
@@ -1508,7 +1508,7 @@ const CheckoutPage = () => {
                   </Col>
                   <Col lg={4} md={4} className="">
                     <Form.Group className="mb-3" controlId="">
-                      <Form.Label className="font-lato">
+                      <Form.Label className="font-lato text-light">
                         Email Address
                       </Form.Label>
                       <Form.Control
@@ -1566,7 +1566,7 @@ const CheckoutPage = () => {
 
               <br />
               <br />
-              <h1 className="text-uppercase font-24 fw-bold mb-3">NOTE</h1>
+              <h1 className="text-uppercase font-24 fw-bold mb-3 text-light">NOTE</h1>
               <textarea
                 className="form-control form-deco"
                 rows={5}
@@ -1577,14 +1577,14 @@ const CheckoutPage = () => {
             </Col>
             <Col lg={5} md={12} sm={12} className=" my-4">
               <div className="payment-card p-3">
-                <h2 className="text-uppercase font-24 fw-bold ps-2">
+                <h2 className="text-uppercase font-24 fw-bold ps-2 text-light">
                   your order
                 </h2>
                 <table className="table">
                   <thead>
                     <tr>
-                      <th scope="col">Product</th>
-                      <th scope="col" className="text-end">
+                      <th scope="col" className="text-light">Product</th>
+                      <th scope="col" className="text-end text-light">
                         Total
                       </th>
                     </tr>
@@ -1609,7 +1609,7 @@ const CheckoutPage = () => {
                               </a>
                             )}
                           </th>
-                          <td className="text-end">
+                          <td className="text-end text-light">
                             {item.quantity}
                             &nbsp;x &nbsp;{item.unit_price}
                             &nbsp;= &nbsp;{item.total} Tk
@@ -1620,10 +1620,10 @@ const CheckoutPage = () => {
                 </table>
                 <div className="">
                   <div className="d-flex justify-content-between">
-                    <p className="font-lato text-capitalize font-20 pe-2 phone_res">
+                    <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
                       subtotal:{" "}
                     </p>
-                    <p className=" font-20 phone_res ">{cart.subTotal} Tk</p>
+                    <p className="text-light font-20 phone_res ">{cart.subTotal} Tk</p>
                   </div>
 
                   {coupon?.isApplied ? (
@@ -1684,10 +1684,10 @@ const CheckoutPage = () => {
                   }) : ""}
 
                   <div className="d-flex justify-content-between">
-                    <p className="font-lato text-capitalize font-20 pe-2 phone_res theme-text">
-                      total:{" "}
+                    <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
+                      total:
                     </p>
-                    <p className="font-20 theme-text phone_res">
+                    <p className="font-20 phone_res text-light">
                       {cart.subTotal + (hasFreeShipping ? 0 : coupon?.shipping_charge || 0) - (coupon?.discount + totalDiscount || 0)}{" "}Tk
                     </p>
                   </div>
@@ -1708,7 +1708,7 @@ const CheckoutPage = () => {
                           }
                         />
                         <label
-                          className="form-check-label text-capitalize"
+                          className="form-check-label text-capitalize  text-light"
                           htmlFor="inlineRadio1"
                         >
                           {paymentMethod.code === "sslcommerze"
@@ -1719,7 +1719,7 @@ const CheckoutPage = () => {
                     ))}
                 </div>
 
-                <p className="mt-3 d-flex flex-column">
+                <p className="mt-3 d-flex flex-column text-light">
                   <span>
                     <strong>Delivery:</strong> Inside Dhaka in 24 hours, outside
                     Dhaka in 48 hours
@@ -1740,20 +1740,20 @@ const CheckoutPage = () => {
                       onChange={(event) => setAgree(event.target.checked)}
                       className="me-2"
                     />
-                    <Link href="/terms-and-conditions" className="mr-1">
+                    <Link href="/terms-and-conditions" className="mr-1 text-light">
                       Terms & Conditions,
                     </Link>
-                    <Link href="/refund-policy" className="mr-1">
+                    <Link href="/refund-policy" className="mr-1 text-light">
                       Refund policy,
                     </Link>
-                    <Link href="/privacy-policy" className="mr-1">
+                    <Link href="/privacy-policy" className="mr-1 text-light">
                       Privacy policy
                     </Link>
                   </Form.Group>
                 </div>
 
                 <div className="coupon mb-4 mt-4">
-                  <label className="mb-2" htmlFor="coupon">
+                  <label className="mb-2 text-light" htmlFor="coupon">
                     Have a coupon?
                   </label>
                   <div className="coupon_input">
@@ -1778,7 +1778,7 @@ const CheckoutPage = () => {
                       disabled={coupon?.isChecking}
                     >
                       {coupon?.isChecking && (
-                        <span className="me-2">
+                        <span className="me-2 text-light">
                           <Oval
                             height={18}
                             width={18}
@@ -1801,7 +1801,7 @@ const CheckoutPage = () => {
                 <div className="">
                   <button
                     type="button"
-                    className="d-flex align-items-center justify-content-center text-capitalize place_order_border cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold theme-text"
+                    className="d-flex align-items-center justify-content-center text-capitalize place_order_border text-light cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold theme-text"
                     onClick={(event) => handlePlaceOrder(event)}
                     disabled={isLoading}
                   >
@@ -1827,12 +1827,12 @@ const CheckoutPage = () => {
               </div>
 
               <div className="">
-                <p className="text-capitalize py-3 font-16">
+                <p className="text-capitalize py-3 font-16 text-light">
                   online payment by SSLCommerz:
                 </p>
                 <div className="row">
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2">card</p>
+                    <p className="text-capitalize text-center pb-2 text-light">card</p>
                     <Image
                       src={Card}
                       alt="card"
@@ -1840,7 +1840,7 @@ const CheckoutPage = () => {
                     />
                   </Col>
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2  text-light">
                       bank transfer
                     </p>
                     <Image
@@ -1850,7 +1850,7 @@ const CheckoutPage = () => {
                     />
                   </Col>
                   <Col lg={4} md={4} sm={4} className="mb-3">
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light">
                       mobile banking
                     </p>
                     <Image
@@ -1863,31 +1863,31 @@ const CheckoutPage = () => {
               </div>
 
               <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold">
+                <p className="text-capitalize py-3 font-16 fw-bold text-light">
                   Company Information:
                 </p>
                 <div className="row">
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
+                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
                       TIN:
                     </b>
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light">
                       117029919179
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
+                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
                       BIN:
                     </b>
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light text-light">
                       000079132-0403
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
+                    <b className="text-capitalize text-center pb-2 mr-1 text-light text-light">
                       Trade License:
                     </b>
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light text-light">
                       TRAD/DESCC/216136/2019
                     </p>
                   </Col>
@@ -1895,23 +1895,23 @@ const CheckoutPage = () => {
               </div>
 
               <div className="">
-                <p className="text-capitalize py-3 font-16 fw-bold">
+                <p className="text-capitalize py-3 font-16 fw-bold text-light">
                   Bank Account Info:
                 </p>
                 <div className="row">
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
+                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
                       Acc Name:
                     </b>
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light">
                       Ifad Multi Products Limited
                     </p>
                   </Col>
                   <Col lg={12} md={12} className="d-flex">
-                    <b className="text-capitalize text-center pb-2 mr-1">
+                    <b className="text-capitalize text-center pb-2 mr-1 text-light">
                       Acc No:
                     </b>
-                    <p className="text-capitalize text-center pb-2">
+                    <p className="text-capitalize text-center pb-2 text-light">
                       00233011222
                     </p>
                   </Col>

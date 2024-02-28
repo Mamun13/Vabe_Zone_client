@@ -172,7 +172,7 @@ const SingleInventoryPage = () => {
 
                         <div className="col-lg-6 col-md-6 ps-5">
                             <div className="border-bottom">
-                                <h3 className="mt-5 color font-jost display-6 fw-bolder text-capitalize">
+                                <h3 className="mt-5 color font-jost display-6 fw-bolder text-capitalize text-light">
                                     {inventory?.title}
                                 </h3>
                                 <div className="d-flex justify-content-start align-items-center mb-3 mt-2">
@@ -188,12 +188,12 @@ const SingleInventoryPage = () => {
                                         ( {inventory?.reviews_count} review )
                                     </p>
                                 </div>
-                                <p className="font-lato font-20 text-dark mb-3">
+                                <p className="font-lato font-20 mb-3 text-light">
                                     {isRunningOffer ? (
                                         <Fragment>
                                             <del>
                                                 Price: {inventory?.sale_price} Tk.
-                                            </del>
+                                            </del>  
                                             <br/>
                                             Offer Price: {inventory?.offer_price} Tk.
                                         </Fragment>
@@ -212,7 +212,7 @@ const SingleInventoryPage = () => {
                                         {inventory.inventory_variants.map((item, key) => (
                                             <tr key={key}>
                                                 <td width={250}>{item?.variant?.name}</td>
-                                                <td className="d-flex">
+                                                <td className="d-flex  text-light">
                                                     {item?.variant_option?.name}
                                                 </td>
                                             </tr>
@@ -223,7 +223,7 @@ const SingleInventoryPage = () => {
                             )}
 
                             <div className="d-flex justify-content-start align-items-center counter mt-3">
-                                <p className="text-capitalize pe-3 font-lato">quantity :</p>
+                                <p className="text-capitalize pe-3 font-lato text-light">quantity :</p>
 
                                 <div
                                     className="d-flex justify-content-between align-items-center border border-secondary rounded-0 counter">
@@ -232,7 +232,7 @@ const SingleInventoryPage = () => {
                                         <AiOutlineMinus className="text-dark minus-icon"/>
                                     </Button>
 
-                                    <h2 className="px-4 font-14 count-padding">
+                                    <h2 className="px-4 font-14 count-padding text-light">
                                         {quantity}
                                     </h2>
 
