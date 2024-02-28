@@ -28,6 +28,7 @@ export default function Header() {
   const [storedToken, setStoredToken] = useState();
   const [categories, setCategories] = useState([]);
   const [reIsLoggedIn, setReIsLoggedIn] = useState(false);
+  const [customerType, setCustomerType] = useState(null);
 
   useEffect(() => {
     if (isLoggedIn()) {
@@ -45,6 +46,16 @@ export default function Header() {
         setCategories(response.data);
       }
     });
+  }, []);
+
+  useEffect(() => {
+    if (isLoggedIn()) {
+      setReIsLoggedIn(isLoggedIn());
+      const responseData = JSON.parse(localStorage.getItem("responseData")); // Fetch response data from localStorage
+      if (responseData?.data?.customer?.customer_type === "1") {
+        setCustomerType(1);
+      }
+    }
   }, []);
 
   return (
@@ -68,13 +79,15 @@ export default function Header() {
 
                 {reIsLoggedIn ? (
                   <Fragment>
+                    
+
                     <li className="pe-3 login-modal">
                       <Link href="/my-account" className="text-light">
                         My Account
                       </Link>
                     </li>
                     <li className="pe-3 login-modal">
-                      <Link href="/my-account" className="text-light">
+                      <Link href="/vendor" className="text-light">
                         Vendor
                       </Link>
                     </li>
@@ -288,10 +301,7 @@ export default function Header() {
               </Navbar.Collapse>
 
               <div className="d-flex align-items-center cart_icon_bg me-0">
-                <div
-                  
-                  className="me-3 d-flex align-items-center bg-light px-3 py-2 rounded-pill"
-                >
+                <div className="me-3 d-flex align-items-center bg-light px-3 py-2 rounded-pill">
                   <AiOutlineUser className="me-2" color="" size={"20px"} />
                   <div className="d-flex align-items-center">
                     <Link href="/auth/login">Login / </Link>

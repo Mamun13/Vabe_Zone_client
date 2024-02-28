@@ -9,7 +9,7 @@ import { randomInt } from "next/dist/shared/lib/bloom-filter/utils";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
-const ComboProductCard = ({
+const ProductCard = ({
   id,
   categoryId,
   title,
@@ -19,11 +19,12 @@ const ComboProductCard = ({
   offerEnd,
   sku,
   categoryName,
+  subCategoryName,
   imagePath,
   viewLink,
   cssClasses,
   isTimer,
-  items,
+  variants,
 }) => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -51,17 +52,20 @@ const ComboProductCard = ({
         SET_CART_ITEM({
           id: randomInt(11111111, 999999999),
           categoryId,
-          combo_id: id,
+          inventory_id: id,
           quantity: 1,
           unit_price: isRunningOffer ? offerPrice : salePrice,
           total: isRunningOffer ? offerPrice : salePrice,
-
-          type: "combo",
+          type: "product",
           sku: sku,
           title: title,
           category_name: categoryName,
+          sub_category_name: subCategoryName,
           image: imagePath,
-          items,
+          variations: "",
+          variant_id: variants?.[0]?.variant?.id,
+          variant_name: variants?.[0]?.variant?.name,
+          variant_quantity: variants?.[0]?.variant_option?.name,
         })
       );
 
@@ -93,11 +97,11 @@ const ComboProductCard = ({
             src={imagePath}
             width={224}
             height={172}
-            className="card-img-top mt-4 mb-4 img-fluid"
+            className="card-img-top mt-4 mb-4"
             alt={title}
           />
         </Link>
-        {/* {salePrice && offerPrice && salePrice > offerPrice ? (
+        {salePrice && offerPrice && salePrice > offerPrice ? (
           <div className="position-absolute offer-token text-center">
             <span className="text-white veri-align fw-semibold font-14 pt-2">
               -{calculateDiscount(salePrice, offerPrice)}%
@@ -105,11 +109,11 @@ const ComboProductCard = ({
           </div>
         ) : (
           ""
-        )} */}
+        )}
       </div>
-      <Card.Body className="prod-card-body position-relative">
+      <Card.Body className="prod-card-body">
         <Card.Title className="text-center text-capitalize font-18">
-          <Link href={`/combo/pack/${id}`} className="prod-title" title={title}>
+          <Link href={`/vendorProduct/${id}`} className="prod-title" title={title}>
             {title}
           </Link>
         </Card.Title>
@@ -121,37 +125,32 @@ const ComboProductCard = ({
                 Price: {salePrice} Tk.
               </Card.Text>
             </del>
-            <Card.Text className="text-center pb-3 text-capitalize">
+            <Card.Text className="text-center pb-2 text-capitalize">
               offer Price: {offerPrice} Tk.
             </Card.Text>
           </Fragment>
         ) : (
-          <Card.Text className="text-center pb-3 text-capitalize">
+          <Card.Text className="text-center pb-2 text-capitalize">
             <br />
             Price: {salePrice} Tk.
           </Card.Text>
         )}
-        <div className="round_offer">
-          <img src="./offer_shape.png" alt="" className="offer_round_shape" />
-          <div className="offer_text">
-            <p className="text-uppercase fw-bold font-14 d-flex justify-content-center text-white m-0 p-0 offer_text_tab">save</p>
-            <span className="font-poppins font-14 d-flex justify-content-center text-white fw-semibold m-0 offer_percent">
-            {salePrice && offerPrice && salePrice > offerPrice ? (
-          <div className="position-absolute offer-token text-center ps-4">
-            <span className="text-white veri-align fw-semibold font-14 pt-2">
-              {calculateDiscount(salePrice, offerPrice)}%
-            </span>
-          </div>
-        ) : (
-          ""
+
+        {variants && (
+          <Card.Text className="text-center pb-2 text-capitalize">
+            {variants.map((item, index) => (
+              <Fragment key={index}>
+                {item.variant.name}: {item.variant_option.name}
+                {index !== variants.length - 1 && ", "}
+              </Fragment>
+            ))}
+          </Card.Text>
         )}
-            </span>
-          </div>
-        </div>
+
         <div className="d-flex justify-content-center">
           <button
             type="button"
-            className="btn btn-success buy-now rounded-0 text-capitalize px-2 font-14 font-lato me-2"
+            className="btn btn-success buy-now rounded-0 text-capitalize px-2 font-14 me-2 font-lato"
             onClick={(event) => handleAddToCart(event, true)}
           >
             buy now
@@ -164,14 +163,14 @@ const ComboProductCard = ({
             add to cart
           </button>
         </div>
-        {/*{isTimer && isRunningOffer && (
+        {/* {isTimer && isRunningOffer && (
                     <div style={{padding: "10px 0 0", textAlign: "center", fontWeight: "bold"}}>
-                        <Timer startDate={offerStart} endDate={offerEnd}/>
+                        <Timer startDate={offerStart} endDate={offerEnd} />
                     </div>
                 )} */}
       </Card.Body>
     </Card>
   );
 };
- 
-export default ComboProductCard;
+
+export default ProductCard;

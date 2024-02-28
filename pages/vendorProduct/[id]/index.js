@@ -2,7 +2,7 @@ import React, {Fragment, useEffect, useState} from "react";
 import {FaHeart} from "react-icons/fa";
 import ImageSection from "../../../components/product/ImageSection";
 import ProductDescription from "../../../components/product/ProductDescription";
-import {fetchInventory} from "../../../services/InventoryServices"; 
+import {fetchvendorInventory} from "../../../services/VendorServices"; 
 import {useRouter} from "next/router";
 import StarRatings from "react-star-ratings";
 import moment from "moment";
@@ -51,7 +51,7 @@ const SingleInventoryPage = () => {
 
     useEffect(() => {
         if (id) {
-            fetchInventory(id).then((response) => {
+            fetchvendorInventory(id).then((response) => {
                 if (response?.data) {
                     const inventory = response.data;
 
