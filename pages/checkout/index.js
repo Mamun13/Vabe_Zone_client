@@ -21,7 +21,7 @@ import {
   makePayment,
   saveOrder,
   checkCoupon,
-  fetchConditionalDiscounts
+  // fetchConditionalDiscounts
 } from "../../services/OrderServices";
 import { fetchPaymentMethods } from "../../services/PaymentMethodServices";
 import {
@@ -77,27 +77,27 @@ const CheckoutPage = () => {
 
   const [conditionalDiscount, setConditionalDiscount] = useState([]);
 
-  useEffect(() => {
-    fetchConditionalDiscounts().then((response) => {
-      if (response?.data?.length) {
-        // console.log(response.data)
-        setConditionalDiscount(
-          response.data.map(item => ({
-            condition_name: item.condition_name,
-            condition_exp_date: item.condition_exp_date,
-            condition_type: item.condition_type,
-            customer_group: item.customer_group,
-            discount_amount: item.discount_amount,
-            district_id: item.district_id,
-            upazila_id: item.upazila_id,
-            is_exclude_sale: item.is_exclude_sale,
-            min_spend: item.min_spend,
-            max_spend: item.max_spend,
-          }))
-        );
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetchConditionalDiscounts().then((response) => {
+  //     if (response?.data?.length) {
+  //       // console.log(response.data)
+  //       setConditionalDiscount(
+  //         response.data.map(item => ({
+  //           condition_name: item.condition_name,
+  //           condition_exp_date: item.condition_exp_date,
+  //           condition_type: item.condition_type,
+  //           customer_group: item.customer_group,
+  //           discount_amount: item.discount_amount,
+  //           district_id: item.district_id,
+  //           upazila_id: item.upazila_id,
+  //           is_exclude_sale: item.is_exclude_sale,
+  //           min_spend: item.min_spend,
+  //           max_spend: item.max_spend,
+  //         }))
+  //       );
+  //     }
+  //   });
+  // }, []);
 
   const applyDiscount = (subtotal, shippingCharge, districtId, upazilaId, customerGroups) => {
     // console.log(conditionalDiscount)
@@ -1596,7 +1596,7 @@ const CheckoutPage = () => {
                         <tr key={key}>
                           <th
                             scope="row"
-                            className="fw-normal text-wrap lh-base text-capitalize font-16 "
+                            className="fw-normal text-wrap lh-base text-capitalize font-16 text-light"
                           >
                             {item.type === "product" && (
                               <a href={`/product/${item.inventory_id}`}>
@@ -1659,10 +1659,10 @@ const CheckoutPage = () => {
 
                   {coupon?.shipping_charge ? (
                     <div className="d-flex justify-content-between">
-                      <p className="font-lato text-capitalize font-20 pe-2 phone_res">
+                      <p className="font-lato text-capitalize font-20 pe-2 phone_res text-light">
                         shipping charge ({totalWeight.toFixed(2)} kg):{" "}
                       </p>
-                      <p className=" font-20  phone_res">
+                      <p className=" font-20  phone_res text-light">
                         {hasFreeShipping ? 0 : coupon?.shipping_charge} Tk
                       </p>
                     </div>

@@ -1742,11 +1742,11 @@ product part css end
 /*================
 vendor part css start
 ==================*/
-.vendor_part .product-banner {
+.vendor_part .vendor-banner {
   height: 300px;
 }
-.vendor_part .product-banner .vendor_banner{
-  width: 100%;
+.vendor_img{
+  width: 100%!important ;
   height: 300px;
   object-fit: cover;
 }

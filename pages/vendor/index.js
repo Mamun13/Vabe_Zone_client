@@ -20,16 +20,16 @@ const index = ({ title, categoryId }) => {
   return (
     <>
       <section className="vendor_part">
-        <div>
-          <img src="/vendor.jpg" alt="" className="vendor_img w-100"/>
-        </div>
+       <div>
+        <img src="/vendor.jpg" className="vendor_img"/>
+       </div>
         <div className="container">
           <div className="row">
             {inventories.map((inventory, key) => {
               return (
                 <div className="col-lg-3">
                   <div className="mt-0" key={key}>
-                    <div className="ms-3 me-3 mb-3">
+                    <div className="my-3">
                       <VendorProduct
                         id={inventory.id}
                         categoryId={inventory?.product.category_id}

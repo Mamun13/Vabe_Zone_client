@@ -13,18 +13,42 @@ import OrdersTab from "../../components/my-account/OrdersTab";
 import ChangePasswordTab from "../../components/my-account/ChangePasswordTab";
 import { makeTitle } from "../../utils/helpers";
 import Head from "next/head";
+import Withdraw from "../../components/my-account/Withdraw";
+import Deposit from "../../components/my-account/Deposit";
+import TransactionHistory from "../../components/my-account/TransactionHistory";
 
 const MyAccountPage = () => {
   const router = useRouter();
   const { tab, order_status } = router.query;
 
   const [activeKey, setActiveKey] = useState("account-info");
+  const [customerType, setCustomerType] = useState(null);
 
   useEffect(() => {
     if (tab) {
       setActiveKey(tab);
     }
   }, [tab]);
+
+  useEffect(() => {
+    // Get the data from localStorage
+    const localStorageData = localStorage.getItem('persist:root');
+  
+    if (localStorageData) {
+      // Parse the JSON string to an object
+      const parsedData = JSON.parse(localStorageData);
+  
+      // Access the auth object and parse it if it exists
+      const authData = parsedData.auth ? JSON.parse(parsedData.auth) : null;
+  
+      if (authData) {
+        // Access and store the customer_type data
+        const customerType = authData.customer_type;
+        setCustomerType(customerType);
+       
+      }
+    }
+  }, []);
 
   return (
     <Fragment>
@@ -137,6 +161,9 @@ const MyAccountPage = () => {
                         Address
                       </Nav.Link>
                     </Nav.Item>
+                    {customerType === '1' && (
+                    <Fragment>
+                 
                     <Nav.Item>
                       <Nav.Link
                         eventKey="transaction_history"
@@ -185,6 +212,10 @@ const MyAccountPage = () => {
                         Withdraw
                       </Nav.Link>
                     </Nav.Item>
+                    </Fragment>
+                    )}
+
+                  
                   </Nav>
                 </Col>
 
@@ -219,6 +250,24 @@ const MyAccountPage = () => {
                       className="text-capitalize font-16 font-lato"
                     >
                       <AddressTab />
+                    </Tab.Pane>
+                    <Tab.Pane
+                      eventKey="transaction_history"
+                      className="text-capitalize font-16 font-lato"
+                    >
+                      <TransactionHistory/>
+                    </Tab.Pane>
+                    <Tab.Pane
+                      eventKey="deposit"
+                      className="text-capitalize font-16 font-lato"
+                    >
+                      <Deposit/>
+                    </Tab.Pane>
+                    <Tab.Pane
+                      eventKey="withdraw"
+                      className="text-capitalize font-16 font-lato"
+                    >
+                      <Withdraw/>
                     </Tab.Pane>
                   </Tab.Content>
                 </Col>

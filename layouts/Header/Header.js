@@ -26,6 +26,7 @@ export default function Header() {
   const { keyword } = router.query;
 
   const [storedToken, setStoredToken] = useState();
+  const [storeLocal, setStoreLocal] = useState();
   const [categories, setCategories] = useState([]);
   const [reIsLoggedIn, setReIsLoggedIn] = useState(false);
   const [customerType, setCustomerType] = useState(null);
@@ -48,15 +49,40 @@ export default function Header() {
     });
   }, []);
 
+
+
   useEffect(() => {
-    if (isLoggedIn()) {
-      setReIsLoggedIn(isLoggedIn());
-      const responseData = JSON.parse(localStorage.getItem("responseData")); // Fetch response data from localStorage
-      if (responseData?.data?.customer?.customer_type === "1") {
-        setCustomerType(1);
+    // Get the data from localStorage
+    const localStorageData = localStorage.getItem('persist:root');
+  
+    if (localStorageData) {
+      // Parse the JSON string to an object
+      const parsedData = JSON.parse(localStorageData);
+  
+      // Access the auth object and parse it if it exists
+      const authData = parsedData.auth ? JSON.parse(parsedData.auth) : null;
+  
+      if (authData) {
+        // Access and store the customer_type data
+        const customerType = authData.customer_type;
+        setCustomerType(customerType);
+       
       }
     }
   }, []);
+
+
+
+
+  // useEffect(() => {
+  //   if (isLoggedIn()) {
+  //     setReIsLoggedIn(isLoggedIn());
+  //     const responseData = JSON.parse(localStorage.getItem("responseData")); // Fetch response data from localStorage
+  //     if (responseData?.data?.customer?.customer_type === "1") {
+  //       setCustomerType(1);
+  //     }
+  //   }
+  // }, []);
 
   return (
     <Fragment>
@@ -79,12 +105,13 @@ export default function Header() {
 
                 {reIsLoggedIn ? (
                   <Fragment>
-                    
                     <li className="pe-3 login-modal">
                       <Link href="/my-account" className="text-light">
                         My Account
                       </Link>
                     </li>
+                    {customerType === '1' && (
+                    <Fragment>
                     <li className="pe-3 login-modal">
                       <Link href="/vendor" className="text-light">
                         Vendor
@@ -95,6 +122,10 @@ export default function Header() {
                         Pre-order
                       </Link>
                     </li>
+
+                    </Fragment>
+                    )}
+              
                     <li className="">
                       <Link
                         href="/auth/logout"
