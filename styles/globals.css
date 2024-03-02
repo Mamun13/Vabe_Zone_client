@@ -307,7 +307,7 @@ header css starts
 .brand-logo {
   /* max-height: 50px; */
   /* max-width: 165px; */
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
   max-width: 100px;
 }
 
@@ -1217,7 +1217,7 @@ footer part starts
   background: #000;
 }
 .footer-logo {
-  width: 100px;
+  width: 80px;
 }
 .payment-img {
   max-width: 180px !important;

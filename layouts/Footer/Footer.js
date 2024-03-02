@@ -125,7 +125,7 @@ export default function Footer() {
                     <a href="/" target="_blank">
                       <img
                         alt="logo"
-                        src="/logo/footer-logo.png"
+                        src="/logo/LOGO.png"
                         className="img-fluid footer-logo"
                         loading="lazy"
                       />
