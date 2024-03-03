@@ -14,9 +14,22 @@ import ComboProductScroll from "../../components/home/ComboProductScroll";
 import { makeTitle } from "../../utils/helpers";
 import Head from "next/head";
 import DemoSlider from "../../components/home/DemoSlider";
+import { fetchCombos } from "../../services/ComboServices";
 
 const HomePage = () => {
+  const [banners, setBanners] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [combos, setCombos] = useState([]);
+
+  useEffect(() => {
+    fetchCombos({
+      paginate: "no",
+    }).then((response) => {
+      if (response?.data) {
+        setCombos(response.data);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     fetchCategories({
@@ -27,8 +40,6 @@ const HomePage = () => {
       }
     });
   }, []);
-
-  const [banners, setBanners] = useState([]);
 
   // fetch
   useEffect(() => {
@@ -47,7 +58,8 @@ const HomePage = () => {
 
       {/* <BannerSection/> */}
       <DemoSlider />
-      <ComboProductScroll title="Combo Pack" />
+
+      {combos > 0 ? <ComboProductScroll title="Combo Pack" /> : ""}
 
       <CategoryShowcase />
 
