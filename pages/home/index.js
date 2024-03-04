@@ -70,8 +70,12 @@ const HomePage = () => {
       {banners && banners.length && (
         <AddBanner imagePath={banners?.[0]?.item_image} />
       )}
-
-      {categories.map((category, key) => {
+      <CategoryProductScroll
+        // key={key}
+        // title={category.name}
+        // categoryId={category.id}
+      />
+      {/* {categories.map((category, key) => {
         return (
           <CategoryProductScroll
             key={key}
@@ -79,7 +83,7 @@ const HomePage = () => {
             categoryId={category.id}
           />
         );
-      })}
+      })} */}
 
       {banners && banners.length > 1 && (
         <AddBanner imagePath={banners?.[1]?.item_image} />

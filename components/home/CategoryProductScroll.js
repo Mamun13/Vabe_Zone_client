@@ -69,7 +69,7 @@ const CategoryProductScroll = ({title, categoryId}) => {
                 {/*Title Bar*/}
                 <div className="container p-0">
                     <div className="header-title mt-4 mb-3 position-relative rounded">
-                        <h1 className="text-center font-24 text-capitalize py-3 combo-title">{title}</h1>
+                        <h1 className="text-center font-24 text-capitalize py-3 combo-title">asdasdasasd</h1>
                         <Link href={`/category/${categoryId}`}>
                             <div
                                 className="d-flex justify-content-center combo-btn bg-white px-3 py-2 position-absolute rounded-pill">

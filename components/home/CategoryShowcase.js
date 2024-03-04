@@ -18,40 +18,40 @@ const CategoryShowcase = () => {
     });
   }, []);
 
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 2000,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrow: false,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  // var settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 2000,
+  //   autoplay: false,
+  //   autoplaySpeed: 3000,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 1,
+  //   arrow: false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 992,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 2,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 767,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 576,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
 
   return (
     <Fragment>
@@ -61,11 +61,11 @@ const CategoryShowcase = () => {
             Categories
           </h1>
           <div className="row">
-            <Slider {...settings}>
+            {/* <Slider {...settings}> */}
               {categories &&
                 categories.map((category, key) => {
                   return (
-                    <div className="col-lg-4" key={key}>
+                    <div className="col-lg-2" key={key}>
                       <Link href={`/category/${category.id}`}>
                         <div className="position-relative mb-3 mx-2 img-demo">
                           <img
@@ -85,7 +85,7 @@ const CategoryShowcase = () => {
                     </div>
                   );
                 })}
-            </Slider>
+            {/* </Slider> */}
           </div>
         </div>
       </section>
